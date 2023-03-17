@@ -1,6 +1,7 @@
 import React from "react";
+import Button from "./Button";
 
-const CalcContent = () => {
+const CalcContent = ({setModalActive}) => {
     
 
     return(
@@ -18,16 +19,25 @@ const CalcContent = () => {
                 </div>
 
                 <div className="checkbox-block">
-                    <input className="checkbox-block_check" type="checkbox" id="check" name="interest" value="check" checked />
+                    <input className="checkbox-block_check" type="checkbox" defaultChecked onClick={() => {
+                        let with2 = "Да";
+                        let withOut = "Нет";
+
+                        if (document.querySelector('.checkbox-block_check').checked){
+                            document.querySelector('.checkbox-block_check').value = with2;
+                        }
+                        else{
+                            document.querySelector('.checkbox-block_check').value = withOut;
+                        }
+                    }}
+                    />
                     <p className="checkbox-block__text"><a href="index.html" className="checkbox-block__link">Акция</a>ставка 16,5%</p>
                 </div>
                 <div className="copy-text-block">
                     <p className="copy-text">Расчет является приблизительным,<a href="index.html" className="checkbox-block__link">c учетом возможных скидок</a>
                         и соблюдением всех условий по кредиту. Точные условия по кредиту и расчет вы получите после подачи заявки. Не является публичной офертой.</p>
                 </div>
-                <div className="button-to-send-block">
-                    <button className="button-to-send">Отправить заявку</button>
-                </div>
+                <Button setModalActive={setModalActive}/>
             </div>
             <div className="pseudo-block pseudo-block_first "></div> 
             <div className="pseudo-block pseudo-block_second "></div>

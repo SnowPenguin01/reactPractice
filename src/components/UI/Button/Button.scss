@@ -1,0 +1,11 @@
+@import '/src/styles/color.scss';
+
+.button-to-send{
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    color: $white;
+    background: $blue;
+    border-radius: 10px;
+    padding: 22px 82px;
+}

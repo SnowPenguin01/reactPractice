@@ -1,0 +1,41 @@
+@import '/src/styles/color.scss';
+@import '/src/styles/mixin.scss';
+
+.button-switch{
+    display: flex;
+    margin-bottom: 39px;
+
+    &__text{
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__text_view{
+        color: $white;
+    }
+
+    &__checkbox{
+        margin: 0 10px;
+        position: relative;
+        width: 50px;
+        height: 25px;
+        @include transform(none);
+        border-radius: 25px;
+    }
+    
+    &__checkbox::before{
+        content: "";
+        position: absolute;
+        width: 21px;
+        height: 21px;
+        background: $blue;
+        border-radius: 20px;
+        top: 2px;
+        left: 4px;
+    }
+    
+    input:checked[class="button-switch__checkbox"]::before{
+        left: 25px;
+    }
+}

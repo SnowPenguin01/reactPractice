@@ -1,0 +1,22 @@
+@import '/src/styles/color.scss';
+
+.wrap{
+    min-height: 960px;
+    margin: 0 5px;
+}
+
+.wrap_theme-island{
+    background-color: $theme-island;
+}
+
+.wrap_border{
+    border-radius: 30px;
+}
+
+.calc-block{
+    margin: 0 5px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(450px, auto);
+    row-gap: 10px;
+}

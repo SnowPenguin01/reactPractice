@@ -1,0 +1,127 @@
+@import 'reset.scss';
+@import 'color.scss';
+@import 'mixin.scss';
+
+// Components
+@import '/src/components/Header/header.scss';
+@import '/src/components/CaclSection/CaclSection.scss';
+@import '/src/components/Footer/footer.scss';
+// UI
+@import '/src/components/UI/InfoBlock/info-block.scss';
+@import '/src/components/UI/Title/title.scss';
+@import '/src/components/UI/Modal/modal.scss';
+@import '/src/components/UI/SwitchButton/switchButton.scss';
+@import '/src/components/UI/Button/Button.scss';
+@import '/src/components/UI/CalcContent/CalcContent.scss';
+@import '/src/components/UI/FormCaclCopy/FormCalc.scss';
+@import '/src/components/UI/FormCacl/FormCalc.scss';
+
+body{
+    font-family: $fonts;
+}
+
+input{
+    background: $white;
+}
+
+hr{
+    height: 1px;
+    background-color: $whiteBorder;
+    margin-bottom: 20px;
+}
+
+.container{
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .info-block{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1180px) {
+
+    header{
+        height: 112px;
+    }
+
+    .wrap{
+        min-height: 960px;
+        margin: 0;
+    }
+
+    .container{
+        max-width: 1220px;
+    }
+
+    .title{
+        margin: 100px auto 60px auto;
+
+        &__text{
+            font-size: 40px;
+            line-height: 50px;
+            padding-top: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    .button-switch__text{
+        font-size: 16px;
+    }
+
+    .calc-block{
+        margin: 0 150px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 56px;
+    }
+
+    .form-group{
+        width: 100%;
+    }
+
+    .calc-block__content{
+        width: 450px;
+    }
+
+    .content-block{
+        margin: 60px 50px;
+    }
+
+    .content-text{
+        margin-bottom: 10px;
+    }
+
+    .content-title{
+        margin-bottom: 35px;
+    }
+
+    .credit-program-block{
+        margin-bottom: 35px;
+    }
+
+    .button-to-send{
+        font-size: 16px;
+        padding: 21px 105px;
+    }
+
+    .pseudo-block{
+        margin: -30px auto;
+
+        &_first{
+            width: 410px;
+            height: 35px;
+        }
+        
+        &_second{
+            width: 380px;
+            height: 100px;
+            margin-top: -85px;
+        }
+    }
+    
+}
+

@@ -1,0 +1,10 @@
+@import '/src/styles/color.scss';
+
+@mixin transform($property) {
+    -webkit-appearance: $property;
+}
+
+%content-text {
+    text-transform: uppercase;
+    color: $contentText;
+}

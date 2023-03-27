@@ -1,7 +1,9 @@
 import React from "react";
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import axios from 'axios';
+import { Formik, Form, Field} from 'formik';
 import SwitchButton from '../SwitchButton/SwitchButton';
+import apiForCalc from "../../../services/api";
+import calc from "../../../tools/Calculator";
+
 
 const FormCalc = () => {
 
@@ -9,13 +11,6 @@ const FormCalc = () => {
     const [year, setYear] = React.useState(null);
     const [rangeval, setRangeval] = React.useState(5000000);
     const [rangeval2, setRangeval2] = React.useState(42);
-
-    function calc(){
-        let percent = 16.5 / 12 / 100;
-        let isn = Math.pow(1 + percent, rangeval2);
-        let rr = Math.ceil(rangeval * percent * (isn/(isn - 1))) + ' ₽/мес.';
-        document.querySelector('.content-title').textContent = rr;
-    }
 
     function sumTransfom(event){
         let sumNumberRange = document.querySelector('#amountRange').value;
@@ -26,18 +21,18 @@ const FormCalc = () => {
 
             document.querySelector('#amount').value = showSumNumber;
             setRangeval(event.target.value);
-            calc();
+            calc({rangeval,rangeval2});
     }
 
     function yearTransfom(event){
         let resultYears = document.querySelector('#amountYears').value + ' мес.';
             document.querySelector('#amountYear').value = resultYears;
             setRangeval2(event.target.value);
-            calc();
+            calc({rangeval,rangeval2});
     }
     
     React.useEffect(() => {
-        axios.get(process.env.REACT_APP_API_KEY).then((response) => {
+        apiForCalc.then((response) => {
             setSum(response.data);
             setYear(response.data);
         });

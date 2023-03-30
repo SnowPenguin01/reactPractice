@@ -31,10 +31,10 @@ const FormCalc = () => {
             calc({rangeval,rangeval2});
     }
     
-    React.useEffect(async() => {
-        await apiForCalc.then((response) => {
-            setSum(response.data);
-            setYear(response.data);
+    React.useEffect(() => {
+        apiForCalc.then(async(response) => {
+            await setSum(response.data);
+            await setYear(response.data);
         });
       }, []);
 

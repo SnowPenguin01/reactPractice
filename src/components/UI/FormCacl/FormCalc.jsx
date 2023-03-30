@@ -29,11 +29,11 @@ const FormCalc = () => {
     calc({ rangeval, rangeval2 });
   }
 
-  //   TODO: Здесь можно убрать async и await
-  React.useEffect(async () => {
-    await apiForCalc.then((response) => {
-      setSum(response.data);
-      setYear(response.data);
+  React.useEffect(() => {
+    apiForCalc.then(async (response) => {
+      // TODO: здесь нет необходимости использовать async await
+      await setSum(response.data);
+      await setYear(response.data);
     });
   }, []);
 

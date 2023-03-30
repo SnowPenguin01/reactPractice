@@ -77,7 +77,7 @@ const FormCalc = () => {
           <div className="application-text">
             <p>
               Для обсуждения персональных условий{" "}
-              <a class="application-link" href="index.html">
+              <a className="application-link" href="index.html">
                 оставьте заявку
               </a>
             </p>

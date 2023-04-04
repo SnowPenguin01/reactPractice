@@ -1,4 +1,5 @@
 import React from "react";
+import '../SwitchButton/switchButton.scss';
 
 const SwitchButton = () => {
   // TODO: использовать useState

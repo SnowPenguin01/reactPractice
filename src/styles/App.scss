@@ -3,20 +3,7 @@
 @import "mixin.scss";
 
 // TODO: если помещаешь стили в компоненты, то импортировать их нужно в компонентах
-
-// Components
-@import "/src/components/Header/header.scss";
-@import "/src/components/CaclSection/CaclSection.scss";
-@import "/src/components/Footer/footer.scss";
-// UI
-@import "/src/components/UI/InfoBlock/info-block.scss";
-@import "/src/components/UI/Title/title.scss";
-@import "/src/components/UI/Modal/modal.scss";
-@import "/src/components/UI/SwitchButton/switchButton.scss";
-@import "/src/components/UI/Button/Button.scss";
-@import "/src/components/UI/CalcContent/CalcContent.scss";
-@import "/src/components/UI/FormCaclCopy/FormCalc.scss";
-@import "/src/components/UI/FormCacl/FormCalc.scss";
+// сделано
 
 body {
   font-family: $fonts;

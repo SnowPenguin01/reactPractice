@@ -1,5 +1,6 @@
 import React from "react";
 import Modal from "../Modal/Modal"
+import '../Button/Button.scss'
 
 const Button = ({setModalActive}) => {
 

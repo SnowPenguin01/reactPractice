@@ -1,4 +1,5 @@
 import React from "react";
+import '../Modal/modal.scss';
 
 const Modal = ({active, setActive}) => {
 

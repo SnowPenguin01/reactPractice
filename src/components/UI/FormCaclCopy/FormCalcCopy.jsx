@@ -1,6 +1,7 @@
 import React from "react";
 import axios from 'axios';
 import SwitchButton from '../SwitchButton/SwitchButton';
+import '../FormCaclCopy/FormCalc.scss';
 
 const FormCalcCopy = () => {
 

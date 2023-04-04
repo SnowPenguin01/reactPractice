@@ -5,6 +5,7 @@ import Title from '../UI/Title/Title';
 import FormCalc from '../UI/FormCacl/FormCalc';
 import CalcContent from '../UI/CalcContent/CalcContent';
 import Modal from '../UI/Modal/Modal';
+import '../CaclSection/CaclSection.scss';
 
 
 const CalcSection = () => {

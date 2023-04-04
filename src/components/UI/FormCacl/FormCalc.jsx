@@ -3,6 +3,8 @@ import { Formik, Form, Field } from "formik";
 import SwitchButton from "../SwitchButton/SwitchButton";
 import apiForCalc from "../../../services/api";
 import calc from "../../../tools/Calculator";
+// import api from "../../../services/api";
+import '../FormCacl/FormCalc.scss';
 
 const FormCalc = () => {
   const [sum, setSum] = React.useState(null);

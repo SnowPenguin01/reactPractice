@@ -30,12 +30,18 @@ const FormCalc = () => {
     setRangeval2(event.target.value);
     calc({ rangeval, rangeval2 });
   }
+  
+  const formik = useFormik({
+        initialValues: {
+            defaultValueSum: rangeval,
+            defaultValueYear: rangeval2,
+        },
+      });
 
   React.useEffect(() => {
-    apiForCalc.then(async (response) => {
-      // TODO: здесь нет необходимости использовать async await
-      await setSum(response.data);
-      await setYear(response.data);
+    apiForCalc.then((response) => {
+      setSum(response.data);
+      setYear(response.data);
     });
   }, []);
 
@@ -55,14 +61,14 @@ const FormCalc = () => {
               id="amount"
               name="amount_money"
               placeholder="5 000 000₽"
-              defaultValue={rangeval}
+              defaultValue={formik.initialValues.defaultValueSum}
             />
             <Field
               className="form-range sumFormAttr"
               type="range"
               id="amountRange"
               name="amountRange_money"
-              defaultValue={sum.sum.max_value / 2}
+              defaultValue={formik.initialValues.defaultValueSum}
               min={sum.sum.min_value}
               max={sum.sum.max_value}
               onChange={sumTransfom}
@@ -77,11 +83,8 @@ const FormCalc = () => {
             </p>
           </div>
           <div className="application-text">
-            <p>
-              Для обсуждения персональных условий{" "}
-              <a className="application-link" href="index.html">
-                оставьте заявку
-              </a>
+            <p>Для обсуждения персональных условий
+              <a className="application-link" href="index.html">оставьте заявку</a>
             </p>
           </div>
           <div className="form-input-group">
@@ -92,14 +95,14 @@ const FormCalc = () => {
               id="amountYear"
               name="amount_year"
               placeholder="2,5 года"
-              defaultValue={rangeval2}
+              defaultValue={formik.initialValues.defaultValueYear}
             />
             <Field
               className="form-range yearFormAttr"
               type="range"
               id="amountYears"
               name="amount_year"
-              defaultValue={sum.term.max_value / 2}
+              defaultValue={formik.initialValues.defaultValueYear}
               min={sum.term.min_value}
               max={sum.term.max_value}
               onChange={yearTransfom}

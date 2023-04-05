@@ -1,9 +1,9 @@
 import React from "react";
-import { Formik, Form, Field } from "formik";
-import SwitchButton from "../SwitchButton/SwitchButton";
-import apiForCalc from "../../../services/api";
+import {  useFormik, Formik, Form, Field} from 'formik';
+import SwitchButton from '../SwitchButton/SwitchButton';
+// import apiForCalc from "../../../services/api";
 import calc from "../../../tools/Calculator";
-// import api from "../../../services/api";
+import instance from "../../../services/api";
 import '../FormCacl/FormCalc.scss';
 
 const FormCalc = () => {
@@ -38,7 +38,7 @@ const FormCalc = () => {
       });
 
   React.useEffect(() => {
-    apiForCalc.then((response) => {
+    instance.getCalc({PID: 15373}).then((response) => {
       setValueFromData(response.data);
     });
   }, []);

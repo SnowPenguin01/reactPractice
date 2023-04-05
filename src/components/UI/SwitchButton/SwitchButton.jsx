@@ -3,6 +3,7 @@ import '../SwitchButton/switchButton.scss';
 
 const SwitchButton = () => {
     // TODO: использовать useState
+    // сделано
 
     const [switchCheck, setSwitchCheck] = useState(false)
 

@@ -1,18 +1,17 @@
 import axios from "axios";
 
-// const baseURL = process.env.REACT_APP_API_KEY; // http://new.energobank.su/local/ajax
+const baseURL = process.env.REACT_APP_API_KEY;
 
-// const api = () => {
-//   const instance = axios.create({
-//     baseURL: baseURL,
-//   });
-// };
+  const instance = axios.create({
+    baseURL: baseURL,
+  });
 
-// const apiFuncs = {
-//   getCalc: async (params) => await api().get(`/calculator.php`, { params }),
-// };
 
-// export default apiFuncs;
+const apiFuncs = {
+  getCalc: async (params) => await instance.get(`/calculator.php`, {params}),
+};
+
+export default apiFuncs;
 
 
 
@@ -21,8 +20,8 @@ import axios from "axios";
 
 // старый пример
 // import axios from "axios";
-const apiForCalc = axios.get(process.env.REACT_APP_API_KEY);
-export default apiForCalc;
+// const apiForCalc = axios.get(process.env.REACT_APP_API_KEY);
+// export default apiForCalc;
 
 
 // TODO: пример как лучше делать

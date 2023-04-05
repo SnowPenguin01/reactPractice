@@ -1,9 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
 import Button from "../Button/Button";
 import '../CalcContent/CalcContent.scss';
 
 const CalcContent = ({setModalActive}) => {
     
+    const [promotionCheck, setPromotionCheck] = useState(true)
+
+    const handleOnChange = () => {
+        setPromotionCheck(!promotionCheck)
+        promotionValue();
+    };
+
+    function promotionValue(){
+      if (promotionCheck){
+        document.querySelector('.checkbox-block_check').value = "Нет"
+      } else {
+        document.querySelector('.checkbox-block_check').value = "Да"
+      }
+    }
 
     return(
         <div className="calc-block__content calc-block__content_view">
@@ -18,19 +32,9 @@ const CalcContent = ({setModalActive}) => {
                     <p className="content-text">Ставка по кредиту</p>
                     <h3 className="content-subtitle">16,5%</h3>
                 </div>
-
+ 
                 <div className="checkbox-block">
-                    <input className="checkbox-block_check" type="checkbox" defaultChecked onClick={() => {
-                        let with2 = "Да";
-                        let withOut = "Нет";
-
-                        if (document.querySelector('.checkbox-block_check').checked){
-                            document.querySelector('.checkbox-block_check').value = with2;
-                        }
-                        else{
-                            document.querySelector('.checkbox-block_check').value = withOut;
-                        }
-                    }}
+                    <input className="checkbox-block_check" type="checkbox" defaultChecked={promotionCheck} onClick={handleOnChange}
                     />
                     <p className="checkbox-block__text"><a href="index.html" className="checkbox-block__link">Акция</a>ставка 16,5%</p>
                 </div>

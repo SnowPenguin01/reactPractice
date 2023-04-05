@@ -7,8 +7,7 @@ import calc from "../../../tools/Calculator";
 import '../FormCacl/FormCalc.scss';
 
 const FormCalc = () => {
-  const [sum, setSum] = React.useState(null);
-  const [year, setYear] = React.useState(null);
+  const [valuesFromData, setValueFromData] = React.useState(null);
   const [rangeval, setRangeval] = React.useState(5000000);
   const [rangeval2, setRangeval2] = React.useState(42);
 
@@ -40,12 +39,11 @@ const FormCalc = () => {
 
   React.useEffect(() => {
     apiForCalc.then((response) => {
-      setSum(response.data);
-      setYear(response.data);
+      setValueFromData(response.data);
     });
   }, []);
 
-  if (!sum || !year) return null;
+  if (!valuesFromData) return null;
 
   return (
     <div className="calc-block__control">
@@ -69,17 +67,17 @@ const FormCalc = () => {
               id="amountRange"
               name="amountRange_money"
               defaultValue={formik.initialValues.defaultValueSum}
-              min={sum.sum.min_value}
-              max={sum.sum.max_value}
+              min={valuesFromData.sum.min_value} 
+              max={valuesFromData.sum.max_value}
               onChange={sumTransfom}
             />
           </div>
           <div className="under-form-text">
             <p className="form-text credit-number__min">
-              {sum.sum.min_value + " ₽"}
+              {valuesFromData.sum.min_value + " ₽"}
             </p>
             <p className="form-text credit-number__max">
-              {sum.sum.max_value + " ₽"}
+              {valuesFromData.sum.max_value + " ₽"}
             </p>
           </div>
           <div className="application-text">
@@ -103,17 +101,17 @@ const FormCalc = () => {
               id="amountYears"
               name="amount_year"
               defaultValue={formik.initialValues.defaultValueYear}
-              min={sum.term.min_value}
-              max={sum.term.max_value}
+              min={valuesFromData.term.min_value} 
+              max={valuesFromData.term.max_value}
               onChange={yearTransfom}
             />
           </div>
           <div className="under-form-text">
             <p className="form-text credit-data__min">
-              {sum.term.min_value + " мес."}
+              {valuesFromData.term.min_value + " мес."}
             </p>
             <p className="form-text credit-data__max">
-              {sum.term.max_value / 12 + " лет"}
+              {valuesFromData.term.max_value / 12 + " лет"}
             </p>
           </div>
         </Form>

@@ -49,11 +49,8 @@ const CalcSection = () => {
         
         let setNewVal;
 
-        if (switchChange){
-            setNewVal = 'Да';
-        } else {
-            setNewVal = 'Нет';
-        }
+        switchChange ? setNewVal = 'Да' : setNewVal = 'Нет';
+        
         formik.setFieldValue("switchVal", setNewVal);
         setSwitchValue(setNewVal);
 
@@ -68,11 +65,8 @@ const CalcSection = () => {
 
         let setNewProm;
 
-        if (promotionChange){
-            setNewProm = 'Нет';
-        } else {
-            setNewProm = 'Да';
-        }
+        promotionChange ? setNewProm = 'Нет' : setNewProm = 'Да';
+        
         formik.setFieldValue("promotionVal", setNewProm);
         setPromotionValue(setNewProm);
       }
